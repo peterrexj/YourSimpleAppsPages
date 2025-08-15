@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Open+Sans:wght@300;400;600&family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Contact Page Specific Styles */
+    
+    /* AOS Animation Library - Simple Fade Animations */
+    [data-aos="fade-up"] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    [data-aos="fade-up"].aos-animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    [data-aos="fade-right"] {
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    [data-aos="fade-right"].aos-animate {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    [data-aos-delay="100"] { transition-delay: 0.1s; }
+    [data-aos-delay="200"] { transition-delay: 0.2s; }
+    [data-aos-delay="300"] { transition-delay: 0.3s; }
+    [data-aos-delay="400"] { transition-delay: 0.4s; }
+    [data-aos-delay="500"] { transition-delay: 0.5s; }
+    .contact-page-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin: 40px 0;
+    }
+    
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .contact-form-container {
+      background-color: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--card-shadow);
+      padding: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    [data-theme="dark"] .contact-form-container {
+      background-color: #2C3333;
+      box-shadow: none;
+      border: none;
+    }
+    
+    .contact-form-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    [data-theme="dark"] .contact-form {
+      background-color: #2C3333;
+      box-shadow: none;
+      border: none;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .form-group label {
+      font-weight: 500;
+      color: var(--text-color);
+    }
+    
+    [data-theme="dark"] .form-group label {
+      color: #A5C9CA;
+    }
+    
+    .form-control {
+      padding: 12px 15px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: var(--font-primary);
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    [data-theme="dark"] .form-control {
+      background-color: #395B64;
+      color: #E7F6F2;
+      border: none;
+      outline: none;
+      box-shadow: none;
+    }
+    
+    [data-theme="dark"] .form-control::placeholder {
+      color: #BCCCDC;
+    }
+    
+    [data-theme="dark"] .form-control:focus {
+      border: none;
+      box-shadow: 0 0 0 2px rgba(165, 201, 202, 0.3);
+      outline: none;
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.2);
+    }
+    
+    select.form-control {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 15px center;
+      padding-right: 40px;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+    
+    [data-theme="dark"] select.form-control {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23E7F6F2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    }
+    
+    select.form-control.focused {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.2);
+    }
+    
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .submit-button {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: white;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(var(--primary-color-rgb), 0.3);
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      align-self: flex-start;
+    }
+    
+    /* Darker gradient for dark theme - using teal/cyan palette */
+    [data-theme="dark"] .submit-button {
+      background: linear-gradient(135deg, #395B64 0%, #2C3333 100%);
+      color: #E7F6F2;
+      box-shadow: 0 4px 10px rgba(57, 91, 100, 0.5);
+    }
+    
+    .submit-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(var(--primary-color-rgb), 0.4);
+    }
+    
+    /* Darker hover effect for dark theme - using teal/cyan palette */
+    [data-theme="dark"] .submit-button:hover {
+      background: linear-gradient(135deg, #A5C9CA 0%, #395B64 100%);
+      box-shadow: 0 6px 15px rgba(57, 91, 100, 0.6);
+    }
+    
+    .submit-button:active {
+      transform: translateY(1px);
+      box-shadow: 0 2px 5px rgba(var(--primary-color-rgb), 0.3);
+    }
+    
+    .contact-info-container {
+      background-color: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--card-shadow);
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .contact-info-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Decorative elements */
+    .contact-info-container::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(var(--primary-color-rgb), 0.2) 0%, rgba(var(--primary-color-rgb), 0) 70%);
+      z-index: 0;
+      opacity: 0.6;
+    }
+    
+    .contact-info-container::after {
+      content: '';
+      position: absolute;
+      bottom: 30px;
+      left: 20px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(var(--secondary-color-rgb), 0.2) 0%, rgba(var(--secondary-color-rgb), 0) 70%);
+      z-index: 0;
+      opacity: 0.6;
+    }
+    
+    .contact-info-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    /* Dark theme adjustments - using teal/cyan palette */
+    [data-theme="dark"] .contact-info-card {
+      background-color: #2C3333;
+      box-shadow: none;
+      border: none;
+    }
+    
+    .contact-info-header {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: white;
+      padding: 25px 30px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Darker gradient for dark theme - using teal/cyan palette */
+    [data-theme="dark"] .contact-info-header {
+      background: linear-gradient(135deg, #395B64 0%, #2C3333 100%);
+      color: #E7F6F2;
+    }
+    
+    .contact-info-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 60%);
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    
+    .contact-info-header-icon {
+      width: 50px;
+      height: 50px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact-info-header h3 {
+      margin: 0;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+    
+    [data-theme="dark"] .contact-info-header h3 {
+      color: #E7F6F2;
+    }
+    
+    .contact-info-body {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      flex-grow: 1;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .contact-info-section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+      padding-bottom: 20px;
+    }
+    
+    .contact-info-section:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(var(--primary-color-rgb), 0.2), transparent);
+    }
+    
+    [data-theme="dark"] .contact-info-section:not(:last-child)::after {
+      background: linear-gradient(to right, transparent, rgba(165, 201, 202, 0.2), transparent);
+    }
+    
+    .contact-section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 15px 0;
+      font-size: 1.1rem;
+      color: var(--primary-color);
+      font-weight: 600;
+      position: relative;
+    }
+    
+    [data-theme="dark"] .contact-section-title {
+      color: #A5C9CA;
+    }
+    
+    .contact-section-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background-color: rgba(var(--primary-color-rgb), 0.1);
+      border-radius: 50%;
+      color: var(--primary-color);
+      font-size: 0.9rem;
+    }
+    
+    [data-theme="dark"] .contact-section-icon {
+      background-color: #395B64;
+      color: #E7F6F2;
+    }
+    
+    .contact-info-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 12px;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .contact-info-item:hover {
+      background-color: rgba(var(--primary-color-rgb), 0.05);
+      transform: translateX(5px);
+    }
+    
+    [data-theme="dark"] .contact-info-item:hover {
+      background-color: rgba(165, 201, 202, 0.1);
+    }
+    
+    .contact-info-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .contact-info-item:hover::before {
+      opacity: 1;
+    }
+    
+    .contact-info-icon {
+      width: 48px;
+      height: 48px;
+      background-color: rgba(var(--primary-color-rgb), 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    [data-theme="dark"] .contact-info-icon {
+      background-color: #395B64;
+      color: #E7F6F2;
+    }
+    
+    .contact-info-icon::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .contact-info-item:hover .contact-info-icon {
+      background-color: var(--primary-color);
+      color: white;
+      transform: rotate(10deg);
+      box-shadow: 0 5px 15px rgba(var(--primary-color-rgb), 0.3);
+    }
+    
+    [data-theme="dark"] .contact-info-item:hover .contact-info-icon {
+      background-color: #A5C9CA;
+      color: #2C3333;
+      box-shadow: 0 5px 15px rgba(165, 201, 202, 0.3);
+    }
+    
+    .contact-info-item:hover .contact-info-icon::after {
+      opacity: 1;
+    }
+    
+    .contact-info-content {
+      flex-grow: 1;
+    }
+    
+    .contact-info-content h4 {
+      margin: 0 0 5px 0;
+      font-size: 1rem;
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+    
+    [data-theme="dark"] .contact-info-content h4 {
+      color: #A5C9CA;
+    }
+    
+    .contact-info-content p {
+      margin: 0;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      font-size: 1.05rem;
+    }
+    
+    [data-theme="dark"] .contact-info-content p {
+      color: #E7F6F2;
+    }
+    
+    .contact-info-content a {
+      color: var(--text-color);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    
+    [data-theme="dark"] .contact-info-content a {
+      color: #E7F6F2;
+    }
+    
+    .contact-info-content a:hover {
+      color: var(--primary-color);
+    }
+    
+    [data-theme="dark"] .contact-info-content a:hover {
+      color: #A5C9CA;
+    }
+    
+    .contact-info-footer {
+      padding: 20px 30px;
+      background-color: rgba(var(--primary-color-rgb), 0.05);
+      border-top: 1px solid rgba(var(--primary-color-rgb), 0.1);
+    }
+    
+    [data-theme="dark"] .contact-info-footer {
+      background-color: #2C3333;
+      border-top: none;
+    }
+    
+    .contact-info-footer h4 {
+      margin: 0 0 15px 0;
+      font-size: 1rem;
+      color: var(--text-color);
+      font-weight: 500;
+    }
+    
+    [data-theme="dark"] .contact-info-footer h4 {
+      color: #A5C9CA;
+    }
+    
+    .contact-social {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .social-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background-color: var(--bg-color);
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    [data-theme="dark"] .social-icon {
+      background-color: #395B64;
+      color: #E7F6F2;
+      box-shadow: none;
+    }
+    
+    .social-icon::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .social-icon:hover {
+      transform: translateY(-3px) scale(1.05);
+      color: white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .social-icon:hover::before {
+      opacity: 1;
+    }
+    
+    .social-icon:nth-child(1):hover {
+      background-color: #3b5998; /* Facebook */
+    }
+    
+    .social-icon:nth-child(2):hover {
+      background-color: #1da1f2; /* Twitter */
+    }
+    
+    .social-icon:nth-child(3):hover {
+      background-color: #e1306c; /* Instagram */
+    }
+    
+    .social-icon:nth-child(4):hover {
+      background-color: #0077b5; /* LinkedIn */
+    }
+    
+    .map-container {
+      margin-top: 40px;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      height: 400px;
+      background-color: var(--bg-secondary);
+      position: relative;
+    }
+    
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    .map-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(var(--primary-color-rgb), 0.05);
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    /* Back Button */
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: var(--bg-secondary);
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 25px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px var(--shadow-color);
+      border-left: 4px solid var(--accent-color);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .back-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.05) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+    
+    .back-button:hover {
+      background-color: var(--bg-secondary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px var(--shadow-color);
+      text-decoration: none !important;
+      color: var(--primary-color);
+    }
+    
+    .back-button:hover::before {
+      transform: translateX(100%);
+    }
+    
+    .back-button:active {
+      transform: translateY(1px);
+      box-shadow: 0 1px 3px var(--shadow-color);
+    }
+    
+    /* Ensure back button is visible in dark theme - using teal/cyan palette */
+    [data-theme="dark"] .back-button {
+      background-color: #2C3333;
+      box-shadow: none;
+      border-left: 4px solid #395B64;
+      color: #E7F6F2;
+    }
+    
+    [data-theme="dark"] .back-button:hover {
+      background-color: #395B64;
+      box-shadow: none;
+      color: #E7F6F2;
+    }
+    
+    /* Background Circles styles moved to styles.css */
+    
+    /* Contact info animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes shimmer {
+      0% {
+        background-position: -100% 0;
+      }
+      100% {
+        background-position: 200% 0;
+      }
+    }
+    
+    .contact-info-header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      background-size: 200% 100%;
+      animation: shimmer 3s infinite;
+      pointer-events: none;
+    }
+    
+    /* Decorative elements */
+    .contact-info-container {
+      position: relative;
+    }
+    
+    .contact-info-container::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(var(--primary-color-rgb), 0.2) 0%, rgba(var(--primary-color-rgb), 0) 70%);
+      z-index: 0;
+      opacity: 0.6;
+    }
+    
+    .contact-info-container::after {
+      content: '';
+      position: absolute;
+      bottom: 30px;
+      left: 20px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(var(--secondary-color-rgb), 0.2) 0%, rgba(var(--secondary-color-rgb), 0) 70%);
+      z-index: 0;
+      opacity: 0.6;
+    }
+    
+    /* Media query for reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      .bg-circle-left, .bg-circle-right, .bg-circle-left::after,
+      .footer-circle-left, .footer-circle-right, .footer-circle-left::after,
+      .contact-info-header::after {
+        animation: none;
+      }
+    }
+    
+    /* Footer Background Circles styles moved to styles.css */
+  </style>
+</head>
+<body>
+  <div class="bg-circle-left"></div>
+  <div class="bg-circle-right"></div>
+  
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html"><img src="images/logo-icon.png" alt="Company Logo" class="header-logo"></a>
+    <h1 class="header-title"><a href="index.html" style="color: inherit; text-decoration: none;">Contact Us</a></h1>
+    <div class="header-wave">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 70" preserveAspectRatio="none">
+        <path d="M0,0 L1440,0 C1440,0 1080,70 720,70 C360,70 0,0 0,0 Z"></path>
+      </svg>
+    </div>
+    
+    <!-- Theme Switcher -->
+    <div class="theme-switcher">
+      <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-sun light-icon"></i>
+        <i class="fas fa-moon dark-icon"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Main Content -->
+    <main>
+      <a href="index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i> Back to Home
+      </a>
+      
+      <section class="intro-section">
+        <h2>Get in Touch with Us</h2>
+        <p>We'd love to hear from you! Whether you have a question about our apps, need technical support, or want to explore partnership opportunities, our team is ready to help.</p>
+      </section>
+
+      <div class="contact-grid">
+        <div class="contact-form-container">
+          <h2>Send Us a Message</h2>
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="app">Related App</label>
+              <select id="app" name="app" class="form-control">
+                <option value="">-- Select an app (optional) --</option>
+                <!-- App options will be populated by JavaScript -->
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" class="form-control" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-button">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+        
+        <div class="contact-info-container">
+          <div class="contact-info-card">
+            <div class="contact-info-header">
+              <div class="contact-info-header-icon">
+                <i class="fas fa-headset"></i>
+              </div>
+              <h3>Contact Us</h3>
+            </div>
+            
+            <div class="contact-info-body">
+              <!-- Direct Contact Methods -->
+              <div class="contact-info-section">
+                <h4 class="contact-section-title">
+                  <span class="contact-section-icon"><i class="fas fa-comment-dots"></i></span>
+                  Direct Contact
+                </h4>
+                
+                <div class="contact-info-item" data-aos="fade-right" data-aos-delay="100">
+                  <div class="contact-info-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div class="contact-info-content">
+                    <h4>Email Us</h4>
+                    <p><a href="mailto:contact@companyname.com" id="contact-email">contact@companyname.com</a></p>
+                  </div>
+                </div>
+                
+                <div class="contact-info-item" data-aos="fade-right" data-aos-delay="200">
+                  <div class="contact-info-icon">
+                    <i class="fas fa-phone-alt"></i>
+                  </div>
+                  <div class="contact-info-content">
+                    <h4>Call Us</h4>
+                    <p><a href="tel:+11234567890" id="contact-phone">+1 (123) 456-7890</a></p>
+                  </div>
+                </div>
+                
+                <div class="contact-info-item" data-aos="fade-right" data-aos-delay="300">
+                  <div class="contact-info-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div class="contact-info-content">
+                    <h4>Visit Us</h4>
+                    <p id="contact-address">123 Tech Street, Innovation City</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Support Options -->
+              <div class="contact-info-section">
+                <h4 class="contact-section-title">
+                  <span class="contact-section-icon"><i class="fas fa-life-ring"></i></span>
+                  Support Options
+                </h4>
+                
+                <div class="contact-info-item" data-aos="fade-right" data-aos-delay="400">
+                  <div class="contact-info-icon">
+                    <i class="fas fa-ticket-alt"></i>
+                  </div>
+                  <div class="contact-info-content">
+                    <h4>Support Ticket</h4>
+                    <p><a href="#" id="create-ticket">Create a support request</a></p>
+                  </div>
+                </div>
+                
+                <div class="contact-info-item" data-aos="fade-right" data-aos-delay="500">
+                  <div class="contact-info-icon">
+                    <i class="fas fa-question-circle"></i>
+                  </div>
+                  <div class="contact-info-content">
+                    <h4>FAQ</h4>
+                    <p><a href="#" id="view-faq">View frequently asked questions</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="contact-info-footer">
+              <h4>Connect With Us</h4>
+              <div class="contact-social" id="contact-social-icons">
+                <a href="https://facebook.com/companyname" target="_blank" class="social-icon" data-platform="facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/companyname" target="_blank" class="social-icon" data-platform="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com/companyname" target="_blank" class="social-icon" data-platform="instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com/company/companyname" target="_blank" class="social-icon" data-platform="linkedin"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Map removed as requested -->
+    </main>
+  </div>
+  
+  <!-- Footer with curved borders and circles -->
+  <footer class="footer" style="z-index: 1;">
+    <!-- Footer Wave (inverted from header) -->
+    <div class="footer-wave" style="z-index: 1;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 70" preserveAspectRatio="none">
+        <path d="M0,70 L0,35 C240,0 480,0 720,0 C960,0 1200,0 1440,35 L1440,70 L0,70 Z"></path>
+      </svg>
+    </div>
+    
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/logo-icon.png" alt="Company Logo" class="footer-logo-img">
+          <span class="footer-company-name"></span>
+        </div>
+        <div class="footer-links">
+          <a href="company-privacy-policy.html">Privacy Policy</a>
+          <a href="terms-and-conditions.html">Terms of Service</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="blog.html">Blog</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://facebook.com/companyname" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/companyname" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com/companyname" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="https://linkedin.com/company/companyname" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> <span class="company-name"></span>. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>

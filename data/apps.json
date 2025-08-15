@@ -1,0 +1,211 @@
+{
+  "company": {
+    "name": "Your Simple Apps",
+    "logo": "images/logo-icon.png",
+    "email": "support@somecompany.com",
+    "description": "We develop innovative mobile applications to enhance your digital experience. Explore our range of products designed with users in mind."
+  },
+  "apps": [
+    {
+      "id": "loanaffordcalc",
+      "name": "Loan Affordability Calculator",
+      "icon": "images/loanaffordcalc/loan-logo.svg",
+      "landscapeImage": "images/app1-landscape.jpg",
+      "shortDescription": "Empower your financial decisions with a smart, intuitive app that helps you visualize your loan affordability and project your financial future before you commit.",
+      "detailedDescription": "Securing a loan is a major decision, and our app helps you make it with confidence. It's a comprehensive financial tool that lets you analyze your personal finances and visualize the impact of a loan before you commit. You can input loan details, additional asset expenses, and your income and spending to see how everything fits together. The app presents the data in multiple visual formats, including detailed amortization schedules, and even projects your income and expenditures over time to show you the big picture. You can then export a detailed report to PDF to share or save for later, so you always have the insights you need to make the right choice.",
+      "features": ["Planning", "Loan", "Tools", "Finance", "Calculator", "Budgeting", "Amortization", "PDF Export", "future planning"],
+      "screenshots": [
+        "images/loanaffordcalc/win/1.png",
+        "images/loanaffordcalc/win/2.png",
+        "images/loanaffordcalc/win/3.png",
+        "images/loanaffordcalc/win/4.png",
+        "images/loanaffordcalc/win/5.png",
+        "images/loanaffordcalc/win/6.png",
+        "images/loanaffordcalc/win/7.png",
+        "images/loanaffordcalc/win/8.png",
+        "images/loanaffordcalc/win/9.png",
+        "images/loanaffordcalc/win/10.png",
+        "images/loanaffordcalc/win/11.png",
+        "images/loanaffordcalc/win/12.png",
+        "images/loanaffordcalc/win/13.png"
+      ],
+      "privacyPolicyUrl": "/privacy-policy-viewer.html?id=loanaffordcalc",
+      "videos": [
+        {
+          "title": "Mortgage Calculator ",
+          "description": "A Simple Tutorial",
+          "youtubeId": "dQw4w9WgXcQ",
+          "thumbnail": "https://img.youtube.com/vi/Z4vz8aa_vxs/maxresdefault.jpg"
+        }
+      ],
+      "stores": {
+        "ios": "https://apps.apple.com/app/id123456789",
+        "android": "https://play.google.com/store/apps/details?id=com.company.app1",
+        "windows": null
+      }
+    },
+    {
+      "id": "popes",
+      "name": "Popes of the Cathloic Church",
+      "icon": "images/popes/popes-logo.png",
+      "landscapeImage": "images/popes/popes-landscape.png",
+      "shortDescription": "Comprehensive list of Papacy and Popes of the Catholic Church.",
+      "detailedDescription": "<div>\n    <h1>Discover the lives of all Catholic popes</h1>\n    <p>A rich, searchable app with biographies, images, and history, all in one place! Perfect for history enthusiasts and students.</p>\n\n    <h2>Explore the Rich History of the Catholic Papacy</h2>\n    <p>The Popes app offers an in-depth exploration of the Catholic Church's papal history, providing a comprehensive, easy-to-navigate collection of all popes throughout the centuries. Organized chronologically, this app enables you to search by name or browse by the century, offering a unique way to learn about the Church’s remarkable legacy through its leaders.</p>\n    <p>Each entry provides an extensive profile, detailing not only the essential dates and milestones of each pope’s papacy but also insightful narratives about their lives, contributions, and challenges. Dive into the lives of historical figures, from the early Church martyrs to reformers, scholars, and visionaries who have shaped the Catholic faith across generations.</p>\n\n    <h2>Features:</h2>\n    <ul>\n        <li><strong>Detailed Biographies:</strong> Each pope’s profile is packed with fascinating details about their journey, major accomplishments, and the historical context of their tenure.</li>\n        <li><strong>Century-by-Century Organization:</strong> Discover how the papacy evolved over time, from the ancient world to the modern era, with the option to explore by century.</li>\n        <li><strong>Powerful Search Functionality:</strong> Easily find specific popes by name, making the app ideal for quick reference or in-depth study.</li>\n        <li><strong>Rich Visual Content:</strong> Browse through relevant images that enhance each entry, bringing historical settings, artifacts, and notable events to life.</li>\n        <li><strong>Educational and Accessible:</strong> Perfect for students, researchers, and anyone with a passion for history or the Catholic Church.</li>\n    </ul>\n\n    <p>Whether you’re a history enthusiast, a student of religion, or simply curious about the lives of these influential leaders, the Popes app is a beautifully crafted, informative guide to the rich tapestry of the Catholic papacy. Discover the stories behind the men who have led the Church for nearly two thousand years, and gain a deeper appreciation for their lasting impact on faith, culture, and history.</p>\n</div>",
+      "features": ["Referece", "Education", "Catholic", "Popes", "Church", "History"],
+      "screenshots": [
+        "images/popes/screenshots/iphone/Screenshot 1.png",
+        "images/popes/screenshots/iphone/Screenshot 2.png",
+        "images/popes/screenshots/iphone/Screenshot 3.png",
+        "images/popes/screenshots/iphone/Screenshot 4.png",
+        "images/popes/screenshots/iphone/Screenshot 5.png",
+        "images/popes/screenshots/iphone/Screenshot 6.png",
+        "images/popes/screenshots/iphone/Screenshot 7.png",
+        "images/popes/screenshots/iphone/Screenshot 8.png",
+        "images/popes/screenshots/iphone/Screenshot 9.png",
+        "images/popes/screenshots/iphone/Screenshot 10.png",
+        "images/popes/screenshots/iphone/Screenshot 11.png",
+        "images/popes/screenshots/iphone/Screenshot 12.png",
+        "images/popes/screenshots/iphone/Screenshot 13.png",
+        "images/popes/screenshots/iphone/Screenshot 14.png",
+        "images/popes/screenshots/iphone/Screenshot 15.png",
+        "images/popes/screenshots/iphone/Screenshot 16.png",
+        "images/popes/screenshots/iphone/Screenshot 17.png",
+        "images/popes/screenshots/ipad/Screenshot 1.png",
+        "images/popes/screenshots/ipad/Screenshot 2.png",
+        "images/popes/screenshots/ipad/Screenshot 3.png",
+        "images/popes/screenshots/ipad/Screenshot 4.png",
+        "images/popes/screenshots/ipad/Screenshot 5.png",
+        "images/popes/screenshots/ipad/Screenshot 6.png",
+        "images/popes/screenshots/ipad/Screenshot 7.png",
+        "images/popes/screenshots/ipad/Screenshot 8.png"
+      ],
+      "privacyPolicyUrl": "privacy-policies/app2-privacy.html",
+      "videos": [
+        {
+          "title": "Popes of the Catholic Church - App Demo",
+          "description": "See how this app helps you learn about Catholic history",
+          "youtubeId": "LBr7kECsjcQ",
+          "thumbnail": "https://img.youtube.com/vi/LBr7kECsjcQ/maxresdefault.jpg"
+        },
+        {
+          "title": "New Features in Version 2.0",
+          "description": "Explore the latest updates to our app",
+          "youtubeId": "M7lc1UVf-VE",
+          "thumbnail": "https://img.youtube.com/vi/M7lc1UVf-VE/maxresdefault.jpg"
+        }
+      ],
+      "stores": {
+        "ios": "https://apps.apple.com/us/app/popes-of-the-catholic-church/id6471321897?platform=iphone",
+        "android": "https://play.google.com/store/apps/details?id=com.company.app2",
+        "windows": "https://www.microsoft.com/store/apps/app2"
+      }
+    },
+    {
+      "id": "saints",
+      "name": "Catholic Saints",
+      "icon": "images/saints/saints-logo.png",
+      "landscapeImage": "images/saints/saints-landscape.png",
+      "shortDescription": "A secure and user-friendly application for managing your personal information.",
+      "detailedDescription": "App3 provides bank-level security for your sensitive information. With end-to-end encryption and biometric authentication, your data remains protected while still being easily accessible when you need it.",
+      "features": ["Security", "Encryption", "Biometrics"],
+      "screenshots": [
+        "images/app3-screenshot1.png",
+        "images/app3-screenshot2.png",
+        "images/app3-screenshot3.png"
+      ],
+      "privacyPolicyUrl": "privacy-policies/app3-privacy.html",
+      "videos": [
+        {
+          "title": "App3 Security Features",
+          "description": "Learn about the advanced security in App3",
+          "youtubeId": "hHW1oY26kxQ",
+          "thumbnail": "https://img.youtube.com/vi/hHW1oY26kxQ/maxresdefault.jpg"
+        }
+      ],
+      "stores": {
+        "ios": "https://apps.apple.com/us/app/catholic-saints-blessed/id6470120151",
+        "android": "https://play.google.com/store/apps/details?id=com.company.app3",
+        "windows": null
+      }
+    },
+    {
+      "id": "country",
+      "name": "Country Insights",
+      "icon": "images/country/country-logo.png",
+      "landscapeImage": "images/country/country-landscape.png",
+      "shortDescription": "An entertainment application that provides immersive experiences for users of all ages.",
+      "detailedDescription": "App4 transforms how you experience digital entertainment with cutting-edge AR/VR technology. Connect with friends, explore virtual worlds, and enjoy content in ways you never thought possible.",
+      "features": ["Entertainment", "AR/VR", "Social"],
+      "screenshots": [
+        "images/app4-screenshot1.png",
+        "images/app4-screenshot2.png",
+        "images/app4-screenshot3.png",
+        "images/app4-screenshot4.png"
+      ],
+      "privacyPolicyUrl": "privacy-policies/app4-privacy.html",
+      "videos": [
+        {
+          "title": "App4 AR Experience",
+          "description": "See the amazing AR capabilities of App4",
+          "youtubeId": "YE7VzlLtp-4",
+          "thumbnail": "https://img.youtube.com/vi/YE7VzlLtp-4/maxresdefault.jpg"
+        },
+        {
+          "title": "App4 VR Demo",
+          "description": "Experience virtual reality with App4",
+          "youtubeId": "jNQXAC9IVRw",
+          "thumbnail": "https://img.youtube.com/vi/jNQXAC9IVRw/maxresdefault.jpg"
+        },
+        {
+          "title": "App4 Social Features",
+          "description": "Connect with friends in App4",
+          "youtubeId": "8tPnX7OPo0Q",
+          "thumbnail": "https://img.youtube.com/vi/8tPnX7OPo0Q/maxresdefault.jpg"
+        }
+      ],
+      "stores": {
+        "ios": "https://apps.apple.com/us/app/country-insights/id6472267884",
+        "android": "https://play.google.com/store/apps/details?id=com.company.app4",
+        "windows": "https://www.microsoft.com/store/apps/app4"
+      }
+    },
+    {
+      "id": "leaders",
+      "name": "World Leaders Hub",
+      "icon": "images/leaders/leaders-logo.png",
+      "landscapeImage": "images/leaders/leaders-landscape.png",
+      "shortDescription": "An innovative solution for managing your daily activities and enhancing productivity.",
+      "detailedDescription": "App5 brings organization to your daily life with smart scheduling, reminders, and AI-powered suggestions. Stay on top of your commitments and never miss an important event again.",
+      "features": ["Lifestyle", "AI-powered", "Offline Mode"],
+      "screenshots": [
+        "images/app5-screenshot1.png",
+        "images/app5-screenshot2.png"
+      ],
+      "privacyPolicyUrl": "privacy-policies/app5-privacy.html",
+      "videos": [
+        {
+          "title": "App5 Productivity Tips",
+          "description": "Boost your productivity with App5",
+          "youtubeId": "xuCn8ux2gbs",
+          "thumbnail": "https://img.youtube.com/vi/xuCn8ux2gbs/maxresdefault.jpg"
+        }
+      ],
+      "stores": {
+        "ios": "https://apps.apple.com/us/app/world-leaders-hub/id6505108906",
+        "android": "https://play.google.com/store/apps/details?id=com.company.app2",
+        "windows": "https://www.microsoft.com/store/apps/app2"
+      }
+    }
+  ],
+  "contact": {
+    "email": "yoursimpleapps@gmail.com",
+    "phone": "+1 (123) 456-7890",
+    "address": "123 Tech Street, Innovation City",
+    "social": {
+      "facebook": "https://facebook.com/companyname",
+      "twitter": "https://twitter.com/companyname",
+      "instagram": "https://instagram.com/companyname",
+      "linkedin": "https://linkedin.com/company/companyname"
+    }
+  }
+}

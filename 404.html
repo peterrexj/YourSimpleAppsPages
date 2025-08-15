@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Our Mobile Applications</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Open+Sans:wght@300;400;600&family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .error-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 60vh;
+      padding: 20px;
+    }
+    
+    .error-code {
+      font-size: 8rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin: 0;
+      line-height: 1;
+      opacity: 0.8;
+    }
+    
+    .error-message {
+      font-size: 1.5rem;
+      margin: 20px 0;
+      color: var(--text-color);
+    }
+    
+    .error-description {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+    
+    .home-button {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 24px;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 30px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .home-button:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+      text-decoration: none;
+    }
+    
+    .home-button i {
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Circles with Modern Effects -->
+  <style>
+    /* Modern circle styles with animations and effects */
+    .bg-circle-left {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      top: 0;
+      left: -200px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 0%, rgba(135, 206, 235, 0.1) 50%, rgba(135, 206, 235, 0.2) 100%);
+      border: 15px solid rgba(135, 206, 235, 0.15);
+      box-shadow: inset 4px 4px 15px rgba(255, 255, 255, 0.2), inset -4px -4px 15px rgba(0, 0, 0, 0.05);
+      z-index: 1;
+      pointer-events: none;
+      animation: pulse 15s infinite alternate ease-in-out;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+    
+    .bg-circle-right {
+      position: absolute;
+      width: 133px;
+      height: 133px;
+      top: 0;
+      right: -66px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 0%, rgba(240, 248, 255, 0.1) 50%, rgba(240, 248, 255, 0.15) 100%);
+      box-shadow: inset 2px 2px 8px rgba(255, 255, 255, 0.2), inset -2px -2px 8px rgba(0, 0, 0, 0.05);
+      z-index: 1;
+      pointer-events: none;
+      clip-path: inset(0 50% 0 0);
+      overflow: hidden;
+      animation: float 10s infinite alternate ease-in-out;
+    }
+    
+    /* Inner glow effect with pseudo-element */
+    .bg-circle-left::after {
+      content: '';
+      position: absolute;
+      width: 60%;
+      height: 60%;
+      top: 20%;
+      left: 20%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+      opacity: 0.6;
+      filter: blur(5px);
+      animation: glow 8s infinite alternate ease-in-out;
+    }
+    
+    /* Subtle animations */
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(1.05);
+        opacity: 1;
+      }
+    }
+    
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(10px);
+      }
+    }
+    
+    @keyframes glow {
+      0% {
+        opacity: 0.4;
+        filter: blur(5px);
+      }
+      100% {
+        opacity: 0.7;
+        filter: blur(10px);
+      }
+    }
+    
+    /* Media query for reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      .bg-circle-left, .bg-circle-right, .bg-circle-left::after {
+        animation: none;
+      }
+    }
+  </style>
+  
+  <div class="bg-circle-left"></div>
+  <div class="bg-circle-right"></div>
+  
+  <!-- Header -->
+  <header class="header">
+    <img src="images/logo-icon.png" alt="Company Logo" class="header-logo">
+    <h1 class="header-title">Our Mobile Applications</h1>
+    <div class="header-wave">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 70" preserveAspectRatio="none">
+        <path d="M0,0 L1440,0 C1440,0 1080,70 720,70 C360,70 0,0 0,0 Z"></path>
+      </svg>
+    </div>
+    
+    <!-- Theme Switcher -->
+    <div class="theme-switcher">
+      <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-sun light-icon"></i>
+        <i class="fas fa-moon dark-icon"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Error Content -->
+    <main>
+      <div class="error-container">
+        <h1 class="error-code">404</h1>
+        <h2 class="error-message">Page Not Found</h2>
+        <p class="error-description">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+        <a href="index.html" class="home-button">
+          <i class="fas fa-home"></i> Back to Home
+        </a>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/logo-icon.png" alt="Company Logo" class="footer-logo-img">
+          <span class="footer-company-name"></span>
+        </div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-social">
+          <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> <span class="company-name"></span>. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script src="js/404.js"></script>
+</body>
+</html>

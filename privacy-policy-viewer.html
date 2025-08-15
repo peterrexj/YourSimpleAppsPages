@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Open+Sans:wght@300;400;600&family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- DOMPurify for HTML sanitization -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+</head>
+<body>
+  <style>
+    /* Privacy Policy Page Specific Styles */
+    .privacy-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: var(--bg-color);
+      border-radius: 15px;
+      box-shadow: 0 5px 15px var(--shadow-color);
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+    
+    .privacy-header {
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .privacy-title {
+      text-align: center;
+    }
+    
+    .privacy-title h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: var(--primary-color);
+    }
+    
+    .privacy-title p {
+      margin: 5px 0 0;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    
+    .privacy-content {
+      line-height: 1.7;
+      color: var(--text-color);
+    }
+    
+    .privacy-content h2 {
+      font-size: 1.5rem;
+      margin-top: 2em;
+      border-bottom: 1px solid rgba(var(--primary-color-rgb), 0.1);
+      padding-bottom: 0.2em;
+      color: var(--primary-color);
+    }
+    
+    .privacy-content h3 {
+      font-size: 1.2rem;
+      color: var(--primary-color);
+    }
+    
+    .privacy-content p {
+      margin-bottom: 1.2em;
+      font-size: 0.95rem;
+    }
+    
+    .privacy-content ul,
+    .privacy-content ol {
+      margin-bottom: 1.5em;
+      padding-left: 1.5em;
+    }
+    
+    .privacy-content li {
+      margin-bottom: 0.5em;
+    }
+    
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: var(--bg-secondary);
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 25px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px var(--shadow-color);
+      border-left: 4px solid var(--accent-color);
+    }
+    
+    .back-button:hover {
+      background-color: var(--bg-secondary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px var(--shadow-color);
+      text-decoration: none !important;
+    }
+    
+    .back-button:active {
+      transform: translateY(1px);
+      box-shadow: 0 1px 3px var(--shadow-color);
+    }
+
+    /* Loading state */
+    .loading-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 300px;
+    }
+
+    .loading-spinner {
+      font-size: 2rem;
+      color: var(--accent-color);
+      margin-bottom: 15px;
+    }
+
+    /* Error message */
+    .error-message {
+      text-align: center;
+      padding: 30px;
+      background-color: rgba(var(--error-color-rgb), 0.1);
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .error-message h3 {
+      color: var(--error-color);
+      margin-bottom: 10px;
+    }
+
+    /* Dark theme adjustments */
+    [data-theme="dark"] .back-button {
+      background-color: #2C3333;
+      box-shadow: none;
+      border-left: 4px solid #395B64;
+      color: #E7F6F2;
+    }
+
+    [data-theme="dark"] .back-button:hover {
+      background-color: #395B64;
+      box-shadow: none;
+      color: #E7F6F2;
+    }
+  </style>
+  
+  <div class="bg-circle-left"></div>
+  <div class="bg-circle-right"></div>
+  
+  <!-- Header -->
+  <header class="header">
+    <img src="images/logo-icon.png" alt="Company Logo" class="header-logo">
+    <h1 class="header-title">Privacy Policy</h1>
+    <div class="header-wave">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 70" preserveAspectRatio="none">
+        <path d="M0,0 L1440,0 C1440,0 1080,70 720,70 C360,70 0,0 0,0 Z"></path>
+      </svg>
+    </div>
+    
+    <!-- Theme Switcher -->
+    <div class="theme-switcher">
+      <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-sun light-icon"></i>
+        <i class="fas fa-moon dark-icon"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Main Content -->
+    <main>
+      <a href="#" class="back-button" id="backButton">
+        <i class="fas fa-arrow-left"></i> Back to App Details
+      </a>
+
+      <div class="privacy-container">
+        <div class="privacy-header">
+          <div class="privacy-title">
+            <h1 id="app-name">Privacy Policy</h1>
+            <p>Last updated: August 9, 2025</p>
+          </div>
+        </div>
+        
+        <div class="privacy-content" id="privacy-content">
+          <!-- Privacy policy content will be loaded here -->
+          <div class="loading-container">
+            <i class="fas fa-spinner fa-spin loading-spinner"></i>
+            <p>Loading privacy policy...</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Footer with curved borders and circles -->
+  <footer class="footer" style="z-index: 1;">
+    <!-- Footer Wave (inverted from header) -->
+    <div class="footer-wave" style="z-index: 1;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 70" preserveAspectRatio="none">
+        <path d="M0,70 L0,35 C240,0 480,0 720,0 C960,0 1200,0 1440,35 L1440,70 L0,70 Z"></path>
+      </svg>
+    </div>
+    
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/logo-icon.png" alt="Company Logo" class="footer-logo-img">
+          <span class="footer-company-name"></span>
+        </div>
+        <div class="footer-links">
+          <a href="company-privacy-policy.html">Privacy Policy</a>
+          <a href="terms-and-conditions.html">Terms of Service</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="blog.html">Blog</a>
+        </div>
+        <div class="footer-social">
+          <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> <span class="company-name"></span>. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Wait for the DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize theme
+      initTheme();
+      
+      // Load privacy policy content
+      loadPrivacyPolicy();
+      
+      // Set up back button
+      setupBackButton();
+    });
+    
+    /**
+     * Set up the back button to return to the app details page
+     */
+    function setupBackButton() {
+      const backButton = document.getElementById('backButton');
+      if (backButton) {
+        backButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          const appId = getAppIdFromUrl();
+          if (appId) {
+            window.location.href = `app-details.html?id=${appId}`;
+          } else {
+            window.location.href = 'index.html';
+          }
+        });
+      }
+    }
+
+    /**
+     * Get the app ID from the URL query parameters
+     */
+    function getAppIdFromUrl() {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get('id');
+    }
+
+    /**
+     * Load privacy policy content based on the app ID in the URL
+     */
+    function loadPrivacyPolicy() {
+      const appId = getAppIdFromUrl();
+      
+      if (!appId) {
+        showError('App ID not specified in the URL');
+        return;
+      }
+      
+      // Try to fetch the JSON file to get app details
+      fetch('data/apps.json')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(data => {
+          // Find the app with the matching ID
+          const app = data.apps.find(app => app.id === appId);
+          
+          if (!app) {
+            throw new Error(`App with ID "${appId}" not found`);
+          }
+          
+          // Update company info
+          updateCompanyInfo(data.company);
+          
+          // Update app name in the title
+          document.getElementById('app-name').textContent = `${app.name} - Privacy Policy`;
+          document.title = `${app.name} - Privacy Policy`;
+          
+          // Check if the app has a privacy policy URL
+          if (!app.privacyPolicyUrl) {
+            showError('Privacy policy information is not available for this application.');
+            return;
+          }
+          
+          // Load the privacy policy content from the URL specified in the app object
+          return fetch(app.privacyPolicyUrl);
+        })
+        .then(response => {
+          if (!response) return; // This happens if there's no privacy policy URL
+          
+          if (!response.ok) {
+            throw new Error(`Failed to load privacy policy: ${response.status}`);
+          }
+          return response.text();
+        })
+        .then(html => {
+          if (!html) return; // This happens if there's no privacy policy URL
+          
+          // Extract the content from the HTML
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = html;
+          
+          // Find the privacy policy content div
+          const policyContent = tempDiv.querySelector('.privacy-policy-content');
+          
+          if (policyContent) {
+            // Sanitize the content for security
+            const sanitizedContent = DOMPurify ? 
+              DOMPurify.sanitize(policyContent.innerHTML) : 
+              policyContent.innerHTML;
+            
+            // Set the content
+            document.getElementById('privacy-content').innerHTML = sanitizedContent;
+          } else {
+            throw new Error('Privacy policy content not found in the HTML file');
+          }
+        })
+        .catch(error => {
+          console.error('Error loading privacy policy:', error);
+          showError(`Failed to load privacy policy: ${error.message}`);
+        });
+    }
+
+    /**
+     * Update company information in the page
+     */
+    function updateCompanyInfo(company) {
+      // Update logo
+      const logoElements = document.querySelectorAll('.header-logo, .footer-logo-img');
+      logoElements.forEach(logo => {
+        logo.src = company.logo;
+        logo.alt = `${company.name} Logo`;
+      });
+      
+      // Update company name in footer
+      const footerCompanyName = document.querySelector('.footer-company-name');
+      if (footerCompanyName) {
+        footerCompanyName.textContent = company.name;
+      }
+      
+      // Update copyright
+      const copyright = document.querySelector('.footer-copyright p');
+      if (copyright) {
+        const currentYear = new Date().getFullYear();
+        const companyNameSpan = copyright.querySelector('.company-name');
+        if (companyNameSpan) {
+          companyNameSpan.textContent = company.name;
+        } else {
+          copyright.textContent = `© ${currentYear} ${company.name}. All rights reserved.`;
+        }
+      }
+    }
+
+    /**
+     * Show error message on the page
+     */
+    function showError(message) {
+      const privacyContent = document.getElementById('privacy-content');
+      
+      if (!privacyContent) {
+        console.error('Privacy content container not found');
+        return;
+      }
+      
+      privacyContent.innerHTML = `
+        <div class="error-message">
+          <h3>Error</h3>
+          <p>${message}</p>
+        </div>
+      `;
+    }
+
+    /**
+     * Initialize theme based on user preference or localStorage
+     */
+    function initTheme() {
+      // Check if user has a saved theme preference
+      const savedTheme = localStorage.getItem('app-theme');
+      
+      // If there's a saved preference, use it
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+      } else {
+        // Check if user prefers dark mode at the OS level
+        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (prefersDarkMode) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          updateThemeIcon('dark');
+          localStorage.setItem('app-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+          updateThemeIcon('light');
+          localStorage.setItem('app-theme', 'light');
+        }
+      }
+      
+      // Set up theme toggle button
+      const themeToggle = document.getElementById('themeToggle');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+      }
+    }
+
+    /**
+     * Toggle between light and dark themes
+     */
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      
+      // Update the theme
+      document.documentElement.setAttribute('data-theme', newTheme);
+      
+      // Save the preference
+      localStorage.setItem('app-theme', newTheme);
+      
+      // Update the icon
+      updateThemeIcon(newTheme);
+    }
+
+    /**
+     * Update the theme toggle icon based on current theme
+     */
+    function updateThemeIcon(theme) {
+      const lightIcon = document.querySelector('.light-icon');
+      const darkIcon = document.querySelector('.dark-icon');
+      
+      if (lightIcon && darkIcon) {
+        if (theme === 'dark') {
+          lightIcon.style.display = 'none';
+          darkIcon.style.display = 'block';
+        } else {
+          lightIcon.style.display = 'block';
+          darkIcon.style.display = 'none';
+        }
+      }
+    }
+  </script>
+</body>
+</html>

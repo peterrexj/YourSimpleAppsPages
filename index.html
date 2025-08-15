@@ -1,18 +1,97 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 <head>
-    <title>My Web Page</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Mobile Applications</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Open+Sans:wght@300;400;600&family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Web Page</h1>
-    </header>
+  <!-- No inline styles needed as they're now in the CSS file -->
+  
+  <div class="bg-circle-left"></div>
+  <div class="bg-circle-right"></div>
+  
+  <!-- Header -->
+  <header class="header">
+    <img src="images/logo-icon.png" alt="Company Logo" class="header-logo">
+    <h1 class="header-title">Our Mobile Applications</h1>
+    <div class="header-wave">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 70" preserveAspectRatio="none">
+        <path d="M0,0 L1440,0 C1440,0 1080,70 720,70 C360,70 0,0 0,0 Z"></path>
+      </svg>
+    </div>
+    
+    <!-- Theme Switcher -->
+    <div class="theme-switcher">
+      <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-sun light-icon"></i>
+        <i class="fas fa-moon dark-icon"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Main Content -->
     <main>
-        <p>This is a simple web page created as an example.</p>
+      <section class="intro-section">
+        <h2>Welcome to Company Name</h2>
+        <p>We develop innovative mobile applications to enhance your digital experience. Explore our range of products designed with users in mind.</p>
+      </section>
+
+      <section class="apps-section">
+        <h2>Our Applications</h2>
+        <div class="app-grid">
+          <!-- App cards will be dynamically generated here -->
+          <div class="loading-indicator">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Loading applications...</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact section removed as requested -->
     </main>
-    <footer>
-        <p>&copy; 2023 My Web Page</p>
-    </footer>
+  </div>
+  
+  <!-- Footer with curved borders and circles -->
+  <footer class="footer" style="z-index: 1;">
+    <!-- Footer Wave (inverted from header) -->
+    <div class="footer-wave" style="z-index: 1;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 70" preserveAspectRatio="none">
+        <path d="M0,70 L0,35 C240,0 480,0 720,0 C960,0 1200,0 1440,35 L1440,70 L0,70 Z"></path>
+      </svg>
+    </div>
+    
+    
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/logo-icon.png" alt="Company Logo" class="footer-logo-img">
+          <span class="footer-company-name"></span>
+        </div>
+        <div class="footer-links">
+          <a href="company-privacy-policy.html">Privacy Policy</a>
+          <a href="terms-and-conditions.html">Terms of Service</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="blog.html">Blog</a>
+        </div>
+        <div class="footer-social">
+          <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> <span class="company-name"></span>. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
 </html>

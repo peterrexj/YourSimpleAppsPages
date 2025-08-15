@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Peter's Small Cheddar Cheese</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Open+Sans:wght@300;400;600&family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <style>
+    /* Header navigation links */
+    .header-logo-link, .header-title-link {
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s ease;
+      display: inline-block;
+    }
+    
+    .header-logo-link:hover, .header-title-link:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Blog specific styles */
+    .blog-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .blog-header {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    
+    .blog-title {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+    
+    .blog-description {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .blog-posts {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .blog-post-card {
+      background-color: var(--bg-secondary);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px var(--shadow-color);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .blog-post-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px var(--shadow-color);
+    }
+    
+    .blog-post-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .blog-post-card:hover .blog-post-image {
+      transform: scale(1.05);
+    }
+    
+    .blog-post-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .blog-post-title {
+      font-size: 1.4rem;
+      margin: 0 0 10px 0;
+      color: var(--text-color);
+      transition: color 0.3s ease;
+    }
+    
+    .blog-post-card:hover .blog-post-title {
+      color: var(--primary-color);
+    }
+    
+    .blog-post-meta {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    
+    .blog-post-date {
+      margin-right: 15px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .blog-post-date i, .blog-post-author i {
+      margin-right: 5px;
+      font-size: 0.8rem;
+    }
+    
+    .blog-post-excerpt {
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+    
+    .blog-post-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--primary-color);
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-top: auto;
+    }
+    
+    .blog-post-link i {
+      margin-left: 5px;
+      transition: transform 0.3s ease;
+    }
+    
+    .blog-post-link:hover {
+      color: var(--secondary-color);
+    }
+    
+    .blog-post-link:hover i {
+      transform: translateX(3px);
+    }
+    
+    .blog-categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+      justify-content: center;
+    }
+    
+    .blog-category {
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .blog-category.active {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    
+    /* Light theme category colors */
+    [data-theme="light"] .blog-category {
+      background-color: #F8FAFC;
+      color: #9AA6B2;
+    }
+    
+    [data-theme="light"] .blog-category:hover {
+      background-color: #E2EBF6;
+      color: #5A6978;
+    }
+    
+    /* Dark theme category colors */
+    [data-theme="dark"] .blog-category {
+      background-color: #1A2C42;
+      color: #8EB8E5;
+    }
+    
+    [data-theme="dark"] .blog-category:hover {
+      background-color: #2A1A42;
+      color: #B88EE5;
+    }
+    
+    .blog-search {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      position: relative;
+    }
+    
+    .blog-search input {
+      width: 100%;
+      padding: 12px 20px;
+      padding-right: 50px;
+      border-radius: 30px;
+      border: 2px solid var(--border-color);
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .blog-search input:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.2);
+    }
+    
+    .blog-search button {
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .blog-search button:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-50%) scale(1.05);
+    }
+    
+    .blog-pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+      gap: 10px;
+    }
+    
+    .blog-pagination-item {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: var(--bg-secondary);
+      color: var(--text-color);
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .blog-pagination-item.active {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    
+    .blog-pagination-item:hover:not(.active) {
+      background-color: var(--border-color);
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .blog-posts {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+      
+      .blog-title {
+        font-size: 2rem;
+      }
+      
+      .blog-description {
+        font-size: 1rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .blog-posts {
+        grid-template-columns: 1fr;
+      }
+      
+      .blog-post-title {
+        font-size: 1.2rem;
+      }
+      
+      .blog-categories {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        justify-content: flex-start;
+      }
+      
+      .blog-category {
+        flex-shrink: 0;
+      }
+    }
+  </style>
+  
+  <div class="bg-circle-left"></div>
+  <div class="bg-circle-right"></div>
+  
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="header-logo-link">
+      <img src="images/logo-icon.png" alt="Company Logo" class="header-logo">
+    </a>
+    <a href="index.html" class="header-title-link">
+      <h1 class="header-title">Blog</h1>
+    </a>
+    <div class="header-wave">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 70" preserveAspectRatio="none">
+        <path d="M0,0 L1440,0 C1440,0 1080,70 720,70 C360,70 0,0 0,0 Z"></path>
+      </svg>
+    </div>
+    
+    <!-- Theme Switcher -->
+    <div class="theme-switcher">
+      <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-sun light-icon"></i>
+        <i class="fas fa-moon dark-icon"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Main Content -->
+    <main>
+      <div class="blog-container">
+        <div class="blog-header">
+          <h1 class="blog-title">Our Blog</h1>
+          <p class="blog-description">Stay updated with the latest news, tutorials, and insights about our apps and technology.</p>
+        </div>
+        
+        <div class="blog-search">
+          <input type="text" placeholder="Search blog posts..." id="blogSearch">
+          <button id="blogSearchBtn">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        
+        <div class="blog-categories">
+          <div class="blog-category active" data-category="all">All</div>
+          <div class="blog-category" data-category="tutorials">Tutorials</div>
+          <div class="blog-category" data-category="news">News</div>
+          <div class="blog-category" data-category="updates">Updates</div>
+          <div class="blog-category" data-category="technology">Technology</div>
+        </div>
+        
+        <div class="blog-posts" id="blogPosts">
+          <!-- Blog posts will be loaded here -->
+        </div>
+        
+        <div class="blog-pagination" id="blogPagination">
+          <div class="blog-pagination-item active">1</div>
+          <div class="blog-pagination-item">2</div>
+          <div class="blog-pagination-item">3</div>
+          <div class="blog-pagination-item">
+            <i class="fas fa-ellipsis-h"></i>
+          </div>
+          <div class="blog-pagination-item">
+            <i class="fas fa-chevron-right"></i>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Footer with curved borders and circles -->
+  <footer class="footer" style="z-index: 1;">
+    <!-- Footer Wave (inverted from header) -->
+    <div class="footer-wave" style="z-index: 1;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 70" preserveAspectRatio="none">
+        <path d="M0,70 L0,35 C240,0 480,0 720,0 C960,0 1200,0 1440,35 L1440,70 L0,70 Z"></path>
+      </svg>
+    </div>
+    
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/logo-icon.png" alt="Company Logo" class="footer-logo-img">
+          <span class="footer-company-name"></span>
+        </div>
+        <div class="footer-links">
+          <a href="company-privacy-policy.html">Privacy Policy</a>
+          <a href="terms-and-conditions.html">Terms of Service</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="blog.html">Blog</a>
+        </div>
+        <div class="footer-social">
+          <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> <span class="company-name"></span>. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/blog.js"></script>
+</body>
+</html>

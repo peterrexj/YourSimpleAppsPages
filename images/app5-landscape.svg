@@ -1,0 +1,10 @@
+<svg width="1200" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#85FFBD" />
+      <stop offset="100%" stop-color="#FFFB7D" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#gradient)" />
+  <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="#333333" text-anchor="middle" dominant-baseline="middle" text-shadow="0 2px 4px rgba(255,255,255,0.5)">App5 Landscape</text>
+</svg>
