@@ -9,8 +9,8 @@
     {
       "id": "loanaffordcalc",
       "name": "Loan Affordability Calculator",
-      "icon": "images/loanaffordcalc/loan-logo.svg",
-      "landscapeImage": "images/loanaffordcalc/landscape.jpg",
+      "icon": "images/loanaffordcalc/logo.png",
+      "landscapeImage": "images/loanaffordcalc/landscape.png",
       "shortDescription": "Empower your financial decisions with a smart, intuitive app that helps you visualize your loan affordability and project your financial future before you commit.",
       "detailedDescription": "<h3>Description:</h3><p>Securing a loan is a major decision, and our app helps you make it with confidence.</p><p>It's a comprehensive financial tool that lets you analyze your personal finances and visualize the impact of a loan before you commit. You can input loan details, additional asset expenses, and your income and spending to see how everything fits together.</p><p>The app presents the data in multiple visual formats, including detailed amortization schedules, and even projects your income and expenditures over time to show you the big picture. You can then export a detailed report to PDF to share or save for later, so you always have the insights you need to make the right choice.</p><h3>Features</h3><ul><li><b>Financial Insights:</b> Get a clear understanding of your ability to afford a loan based on your personal financial situation.</li><li><b>Comprehensive Loan Analysis:</b> Input and visualize loan details, including additional expenses, to see repayment schedules in various formats.</li><li><b>Income & Expense Tracking:</b> Capture and visualize your income and current expenditures to see how they are impacted by a new loan.</li><li><b>Future Projections:</b> Project your income and expenses, with and without a loan, to understand the long-term impact on your finances.</li><li><b>Customizable Views:</b> See detailed amortization schedules and switch between multiple themes to personalize the app's look.</li><li><b>Exportable Reports:</b> Easily create and export detailed PDF reports for sharing or future reference.</li></ul>",
       "features": [
