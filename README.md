@@ -291,9 +291,32 @@ example.com
 
 When testing locally, you may encounter CORS issues when trying to load the JSON file. To avoid this:
 
-1. Use a local development server like [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) for VS Code
-2. Or use Python's built-in HTTP server: `python -m http.server`
-3. Or use Node.js's http-server: `npx http-server`
+To run the site locally (so fetch('data/apps.json') works) you must serve the files over HTTP. From the project root (the folder that contains index.html), use one of these simple options:
+
+1. Python 3 (no install needed if Python is installed)
+   - Open a terminal / PowerShell in the project root and run:
+     ```
+     python -m http.server 8000
+     ```
+   - Open: http://localhost:8000
+
+2. Node.js (using npx, installs nothing globally)
+   - Run:
+     ```
+     npx http-server -p 8000
+     ```
+   - Open: http://localhost:8000
+
+3. VS Code Live Server extension
+   - Install Live Server, open the project in VS Code, right-click index.html → "Open with Live Server".
+
+Notes and troubleshooting:
+- Do NOT open index.html via file:// in the browser — Fetch/XHR will be blocked or fail to load JSON.
+- Ensure you run the command from the repository root so the path data/apps.json resolves as expected.
+- If you see 404 for data/apps.json in DevTools → Network, verify the file exists at data/apps.json and no typos in the filename.
+- If you changed the JSON filename or folder, update the fetch path in your JS (e.g., fetch('data/myapps.json')).
+- For Windows with Python2 use: python -m SimpleHTTPServer 8000 (rare).
+- If you need HTTPS locally for some browser features, consider tools like mkcert or a local dev proxy, but it's not required for basic testing.
 
 ### JSON Data Loading
 
