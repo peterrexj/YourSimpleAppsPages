@@ -17,29 +17,16 @@
         "future planning"
       ],
       "screenshots": [
-        "images/loanaffordcalc/win/1.png",
-        "images/loanaffordcalc/win/2.png",
-        "images/loanaffordcalc/win/3.png",
-        "images/loanaffordcalc/win/4.png",
-        "images/loanaffordcalc/win/5.png",
-        "images/loanaffordcalc/win/6.png",
-        "images/loanaffordcalc/win/7.png",
-        "images/loanaffordcalc/win/8.png",
-        "images/loanaffordcalc/win/9.png",
-        "images/loanaffordcalc/win/10.png",
-        "images/loanaffordcalc/win/11.png",
-        "images/loanaffordcalc/win/12.png",
-        "images/loanaffordcalc/win/13.png"
+        "images/loanaffordcalc/store/01-afford.jpg",
+        "images/loanaffordcalc/store/02-loan.jpg",
+        "images/loanaffordcalc/store/03-budget.jpg",
+        "images/loanaffordcalc/store/04-scenarios.jpg",
+        "images/loanaffordcalc/store/05-rates.jpg",
+        "images/loanaffordcalc/store/06-stress.jpg",
+        "images/loanaffordcalc/store/07-projection.jpg",
+        "images/loanaffordcalc/store/08-schedule.jpg"
       ],
       "privacyPolicyUrl": "privacy-policies/loanaffordcalc-privacy.html",
-      "videos": [
-        {
-          "title": "Mortgage Calculator ",
-          "description": "A Simple Tutorial",
-          "youtubeId": "dQw4w9WgXcQ",
-          "thumbnail": "https://img.youtube.com/vi/Z4vz8aa_vxs/maxresdefault.jpg"
-        }
-      ],
       "stores": {
         "ios": "https://apps.apple.com/app/id123456789",
         "android": "https://play.google.com/store/apps/details?id=com.company.app1",

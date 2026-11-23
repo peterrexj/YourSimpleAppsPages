@@ -450,6 +450,128 @@
       margin: 30px 0;
     }
 
+    .app-description ul,
+    .app-description ol {
+      margin: 12px 0 18px;
+      padding-left: 28px;
+    }
+
+    .app-description ul { list-style: disc; }
+    .app-description ol { list-style: decimal; }
+
+    .app-description li {
+      margin: 8px 0;
+      padding-left: 6px;
+      line-height: 1.6;
+    }
+
+    .app-description li::marker {
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+
+    .app-description h3 {
+      margin: 24px 0 8px;
+    }
+
+    /* Prominent user guide link/button */
+    .app-link.guide-link {
+      background-color: transparent;
+      color: var(--primary-color);
+      border: 2px solid var(--primary-color);
+      padding: 6px 16px;
+    }
+
+    .app-link.guide-link i { margin-right: 6px; }
+
+    .app-description a.guide-cta {
+      display: inline-block;
+      margin: 6px 0 14px;
+      padding: 9px 20px;
+      border: 2px solid var(--primary-color);
+      border-radius: 20px;
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .app-description a.guide-cta:hover {
+      background-color: var(--primary-color);
+      color: var(--bg-color);
+    }
+
+    /* ---- Feature chips: one calm style instead of four colours ---- */
+    [data-theme] .app-features-list .app-feature:nth-child(n) {
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      border-radius: 999px;
+      background-color: rgba(var(--primary-color-rgb), 0.12);
+      color: var(--primary-color);
+      border: 1px solid rgba(var(--primary-color-rgb), 0.35);
+      box-shadow: none;
+    }
+    [data-theme="light"] .app-features-list .app-feature:nth-child(n) {
+      color: var(--secondary-color);
+      background-color: rgba(var(--secondary-color-rgb), 0.07);
+      border-color: rgba(var(--secondary-color-rgb), 0.25);
+    }
+    [data-theme] .app-features-list .app-feature:hover {
+      background-color: rgba(var(--primary-color-rgb), 0.22);
+      box-shadow: none;
+    }
+
+    /* ---- Action row: matching pill buttons ---- */
+    .app-actions { align-items: center; gap: 12px; }
+    html[data-theme] .app-actions a.app-link,
+    html[data-theme] .app-actions .privacy-button {
+      box-sizing: border-box;
+      min-height: 44px;
+      min-width: 150px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      justify-content: center;
+      gap: 8px;
+      margin: 0;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+    html[data-theme] .app-actions a.app-link i { margin-right: 0; }
+
+    /* Store buttons: solid, high contrast */
+    html[data-theme="dark"] .app-actions a.app-link:not(.guide-link) {
+      background: var(--primary-color);
+      color: var(--bg-color);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    }
+    html[data-theme="light"] .app-actions a.app-link:not(.guide-link) {
+      background: var(--secondary-color);
+      color: #fff;
+      box-shadow: 0 2px 6px rgba(var(--secondary-color-rgb), 0.3);
+    }
+    html[data-theme] .app-actions a.app-link:not(.guide-link):hover {
+      filter: brightness(1.1);
+    }
+    /* Guide: outlined, Privacy: quiet secondary */
+    html[data-theme] .app-actions a.app-link.guide-link {
+      background: transparent;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+    }
+    html[data-theme="light"] .app-actions a.app-link.guide-link {
+      border-color: var(--secondary-color);
+      color: var(--secondary-color);
+    }
+    html[data-theme] .app-actions .privacy-button {
+      border: 1px solid rgba(var(--primary-color-rgb), 0.4);
+      background: transparent;
+      box-shadow: none;
+      color: var(--primary-color);
+    }
+    html[data-theme="light"] .app-actions .privacy-button { color: var(--secondary-color); }
+    html[data-theme] .app-actions .privacy-button i { color: inherit; }
+
     .app-features-list {
       display: flex;
       flex-wrap: wrap;

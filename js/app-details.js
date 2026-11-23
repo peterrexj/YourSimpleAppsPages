@@ -241,6 +241,7 @@ function renderAppDetails(app) {
       ${app.stores.ios ? `<a href="${app.stores.ios}" target="_blank" class="app-link app-store"><i class="fab fa-apple"></i> App Store</a>` : ''}
       ${app.stores.android ? `<a href="${app.stores.android}" target="_blank" class="app-link google-play"><i class="fab fa-google-play"></i> Google Play</a>` : ''}
       ${app.stores.windows ? `<a href="${app.stores.windows}" target="_blank" class="app-link windows-store"><i class="fab fa-windows"></i> Windows</a>` : ''}
+      ${app.guideUrl ? `<a href="${app.guideUrl}" class="app-link guide-link"><i class="fas fa-book-open"></i> User Guide</a>` : ''}
       <button class="privacy-button" id="showPrivacyBtn"><i class="fas fa-shield-alt"></i> Privacy Policy</button>
     </div>
     
@@ -297,7 +298,7 @@ function renderAppDetails(app) {
     
     <h2>Description</h2>
     <div class="app-description">
-      <p>${app.detailedDescription}</p>
+      ${app.detailedDescription}
     </div>
   `;
   
